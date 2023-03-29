@@ -1,6 +1,7 @@
 body {
     font-family: "Inter", sans-serif;
     background-color: aliceblue;
+    margin: 20px;;
   }
 
 .container {
@@ -11,7 +12,7 @@ body {
     grid-template-areas:
       "menu main main main main"
       "menu skils1 skils1 skils2 skils2"
-      "menu footer footer footer footer";
+      "footer footer footer footer footer";
     font-weight: 800;
     background-color: aliceblue;
 }
@@ -20,18 +21,20 @@ body {
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 2fr 1.2fr 0.8fr;
+    grid-template-rows: 1fr 1.2fr;
     grid-template-areas:
     "menu main main main main main"
-    "skils1 skils1 skils1 skils2 skils2 skils2"
     "footer footer footer footer footer footer";
     font-weight: 800;
     background-color: aliceblue;
 }
 main {
     grid-area: main;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
+}
+
+code {
+    font-family: Consolas,"courier new";
+    text-align: left;
 }
 
 nav {  
@@ -99,15 +102,15 @@ img {
     max-width: 300px;
     height:auto;
     border-radius: 50%;
-    align-items: left;
-
 }
 
-.saper {
+.wisielec {
     border-radius: 0%;
-    float: center;
     width: 100%;
-    max-width: 70%;
+    max-width: 400px;
+    height: auto;
+    margin-right: 20px;
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 650px) {
@@ -132,11 +135,12 @@ img {
     }
 
     footer {
-        text-align: center;
+        text-align: left;
     }
 
     img {
         max-width: 100%;
         height:auto;
     }
+
   }
