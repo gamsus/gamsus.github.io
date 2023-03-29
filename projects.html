@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michał Baluta</title>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container2">
+        <main>
+            <header>Moje projekty</header>
+            <h1>
+                1. Saper (Minesweeper), gdzie wypełniamy siatkę 9x9 polami które na początku są zakryte następnie odkrywamy je w taki sposób aby nie natrafić na minę. Na każdym odkrytym polu dodatkowo wypisywana jest liczba odkrytych min, które stykają się z danym polem. Możemy też zabezpieczyć dane pole flagą. Jeśli gracz odkryje wszystkie pola i zaznaczy flagami wszystkie miny, to wygrywa. Wykorzystaj odpowiedni Layout do rozłożenia przycisków i zrób tak aby przyciski wypełniały odpowiednio ekran oraz czcionka była odpowiednio duża (możesz to przetestować na emulatorze dla różnych rozdzielczości ekranów).
+            </h1>
+            <h1>
+                2.  Napisz aplikację "Wisielec", która wyświetla po kolei obrazek wisielca oraz słowo które gracz próbuje zgadnąć. Słowo wybierane jest losowo z dostępnego słownika. Oczywiście cały czas wyświetlane jest słowo z prawidłowo zgadniętymi literami np. dla słowa komputer jeśli gracz zgadł prawidłowo litery o, m i e, słowo będzie wyglądało mniej więcej tak ?om???e?. Do utworzenia obrazków wykorzystaj np. program GIMP nazwij je odpowiednio wisielec0.png, wisielec1.png i tak dalej. Do wyświetlania obrazków wykorzystaj ImageView. Do przechowywania słownika wykorzystaj plik strings.xml.
+            </h1>
+        </main>
+        <nav id="menu">
+            <h1>Menu</h1>
+                <ul class="nav-links">
+                <li><a href="index.html">-CV</a></li>
+                <li><a href="interests.html">-Zainteresowania</a></li>
+                <li><a href="contact.html">-Kontakt</a></li>
+                <li><a href="projects.html">-Projekty</a></li>
+                <li><a href="studies.html">-Studia</a></li>
+              </ul> 
+        </nav>
+        <section id="skils1">
+            <h1>Saper kawałek kodu</h1>
+            <h3>
+                val row = 9<br>
+                val col = 9<br>
+                for(i in 1..row){<br>
+                    val llrow = LinearLayout(this)<br>
+
+                    llvert.addView(llrow)<br>
+                    for(j in 1..col){<br>
+                        val btnnew = Button(this)<br>
+                        btnnew.text = ""<br>
+                        btnnew.tag = ""+i+"_"+j<br>
+                        llrow.addView(btnnew)<br>
+                        btnnew.layoutParams.width = width / 9<br>
+                         btnnew.layoutParams.height = (height - 600) / 9<br>
+                        btnnew.setOnClickListener(myNewButtonListener)<br>
+            </h3>
+        </section>
+        <article id="skils2">
+            <h1>Saper zdjęcie</h1>
+            <img src="./resources/saper.png" class="saper" alt="Moje zdjęcie">
+        </article>
+        <footer>
+        </footer>
+      </div>
+</body>
+</html>
