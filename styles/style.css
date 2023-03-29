@@ -57,6 +57,10 @@ h1 {
     font-size: 30px;
 }
 
+h2 {
+    font-size: 20px;
+}
+
 a {
     transition: box-shadow 1s ease 0s;
     text-decoration: none;
@@ -75,7 +79,13 @@ a:hover {
     padding: 12px;
 }
 
-@media only screen and (max-width: 550px) {
+img {
+    max-width: 300px;
+    height:auto;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 650px) {
     .container {
       grid-template-columns: 1fr;
       grid-template-rows: 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
@@ -98,5 +108,10 @@ a:hover {
 
     footer {
         text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height:auto;
     }
   }
