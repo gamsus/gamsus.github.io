@@ -1,0 +1,102 @@
+body {
+    font-family: "Inter", sans-serif;
+  }
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1.2fr 0.8fr;
+    grid-template-areas:
+      "menu main main main main"
+      "menu skils1 skils1 skils2 skils2"
+      "menu footer footer footer footer";
+    font-weight: 800;
+    background-color: aliceblue;
+}
+
+main {
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+nav {  
+    background: #1de9b6;
+    grid-area: menu;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    font-size: 25px;
+}
+
+#skils1 {
+    grid-area: skils1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#skils2 {
+    grid-area: skils2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+footer {
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-align: left;
+}
+
+header {
+    font-size: 40px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+a {
+    transition: box-shadow 1s ease 0s;
+    text-decoration: none;
+    font-size: 30;
+}
+
+a:hover {
+    box-shadow: 0 -3px 0 #CC3232 inset;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li{
+    padding: 12px;
+}
+
+@media only screen and (max-width: 550px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+      grid-template-areas:
+        "main"
+        "menu"
+        "skils1"
+        "skils2"
+        "footer"
+    }
+
+    header {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+    }
+  }
