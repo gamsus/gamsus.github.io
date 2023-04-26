@@ -1,0 +1,77 @@
+//funkcje
+@function pow($base, $exponent) {
+    $result: 1;
+    @for $_ from 1 through $exponent {
+      $result: $result * $base;
+    }
+    @return $result;
+};
+
+@function add($first-number, $second-number) {
+    @return $first-number + $second-number
+};
+
+body {
+    font-family: $font-family;
+    margin: add(0, 0);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    grid-area: main;
+    margin-left: pow( 4.5, 2) * 1px;
+}
+
+code {
+    font-family: Consolas,"courier new";
+    text-align: right;
+}
+
+nav {  
+    background: $nav-bg-color;
+    grid-area: menu;
+    font-size: $nav-font-size;
+}
+
+footer {
+    grid-area: footer;
+    text-align: left;
+}
+
+header {
+    font-size: $header-font-size;
+    text-align: center;
+}
+
+h1 {
+    font-size: $h1-font-size;
+}
+
+h2 {
+    font-size: $h2-font-size;
+}
+
+h3 {
+    font-size: $h3-font-size;
+}
+
+a {
+    transition: box-shadow 3s ease 0s;
+    text-decoration: none;
+    font-size: $a-font-size;
+}
+
+pre {
+    overflow: auto;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}

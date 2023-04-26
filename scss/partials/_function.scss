@@ -1,0 +1,12 @@
+@function add($first-number, $second-number) {
+    @return $first-number + $second-number
+};
+
+@function pow($base, $exponent) {
+    $result: 1;
+    @for $_ from 1 through $exponent {
+      $result: $result * $base;
+    }
+    @return $result;
+};
+  

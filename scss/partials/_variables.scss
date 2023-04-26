@@ -1,0 +1,17 @@
+//variables
+$font-family: Tahoma, serif;
+$grid-template-columns: repeat(5, 1fr);
+$grid-template-areas: 
+  "menu main main main main"
+  "menu skils1 skils1 skils2 skils2"
+  "footer footer footer footer footer";
+$font-weight: 800;
+$background-color: aliceblue;
+$nav-bg-color: #1de9b6;
+$nav-font-size: 25px;
+$a-font-size: 30px;
+$h1-font-size: 2vw;
+$h2-font-size: 20px;
+$h3-font-size: 20px;
+$header-font-size: 3vw;
+$media-query: 700px;

@@ -1,5 +1,159 @@
 <!DOCTYPE html>
 <html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michał Baluta</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>Moje projekty</header>
+        <div id="burger-menu">
+            <span></span>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="interests.html">Zainteresowania</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="studies.html">Studia</a></li>
+            </ul>
+        </div>
+        <script src="./script.js"></script>
+    <main>
+        <section id="projects">
+            <article>
+                <h1>
+                    1. Saper (Minesweeper), gdzie wypełniamy siatkę 9x9 polami które na początku są zakryte następnie
+                    odkrywamy je w taki sposób aby nie natrafić na minę. Na każdym odkrytym polu dodatkowo wypisywana
+                    jest liczba odkrytych min, które stykają się z danym polem. Możemy też zabezpieczyć dane pole flagą.
+                    Jeśli gracz odkryje wszystkie pola i zaznaczy flagami wszystkie miny, to wygrywa. Wykorzystaj
+                    odpowiedni Layout do rozłożenia przycisków i zrób tak aby przyciski wypełniały odpowiednio ekran
+                    oraz czcionka była odpowiednio duża (możesz to przetestować na emulatorze dla różnych rozdzielczości
+                    ekranów).
+                </h1>
+            </article>
+            <aside>
+                <div>
+                    <figure>
+                        <img src="resources/saper.png" alt="saper photo" class="saper">
+                    </figure>
+                </div>
+            </aside>
+            <pre>
+        <code>
+            public Board(int width, int height, Pane pane, MoverI mover) {
+                this.width = width;
+                this.height = height;
+                nodeArray = new Node[width][height];
+                mover.setNodes(nodeArray);
+                this.pane = pane;
+                for(int i = 0; i < width; i++) {
+                    for (int j = 0; j < height; j++) {
+                        Color color;
+                        if ((i + j) % 2 == 0) color = Color.GREEN;
+                        else color = Color.BEIGE;
+                        nodeArray[i][j] = new Node(75.0d * j, 75.0d * i, 75.0d, 75.0d, color, i, j);
+                        nodeArray[i][j].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent event) {
+                            Node node = (Node) event.getSource();
+                            mover.giveNode(node.i, node.j);
+                        }
+                });
+        </code>
+    </pre>
+
+
+            <article>
+                <h1>
+                    2. Napisz warcaby w języku Java. Warcaby – gra planszowa powstała w XII wieku, najprawdopodobniej na
+                    południu Francji lub w Hiszpanii[1].
+                </h1>
+            </article>
+            <aside>
+                <figure>
+                    <img src="resources/warcaby.png" alt="warcaby photo" class="saper">
+                </figure>
+            </aside>
+            <pre>
+        <code>
+public Board(int width, int height, Pane pane, MoverI mover) {
+    this.width = width;
+    this.height = height;
+    nodeArray = new Node[width][height];
+    mover.setNodes(nodeArray);
+    this.pane = pane;
+    for(int i = 0; i < width; i++) {
+        for (int j = 0; j < height; j++) {
+            Color color;
+            if ((i + j) % 2 == 0) color = Color.GREEN;
+            else color = Color.BEIGE;
+            nodeArray[i][j] = new Node(75.0d * j, 75.0d * i, 75.0d, 75.0d, color, i, j);
+            nodeArray[i][j].setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                Node node = (Node) event.getSource();
+                mover.giveNode(node.i, node.j);
+            }
+        });
+        </code>
+    </pre>
+
+            <article>
+                <h1>
+                    2. Napisz aplikację "Wisielec", która wyświetla po kolei obrazek wisielca oraz słowo które gracz
+                    próbuje zgadnąć. Słowo wybierane jest losowo z dostępnego słownika. Oczywiście cały czas wyświetlane
+                    jest słowo z prawidłowo zgadniętymi literami np. dla słowa komputer jeśli gracz zgadł prawidłowo
+                    litery o, m i e, słowo będzie wyglądało mniej więcej tak ?om???e?. Do utworzenia obrazków
+                    wykorzystaj np. program GIMP nazwij je odpowiednio wisielec0.png, wisielec1.png i tak dalej. Do
+                    wyświetlania obrazków wykorzystaj ImageView. Do przechowywania słownika wykorzystaj plik
+                    strings.xml.
+                </h1>
+            </article>
+            <aside>
+                <figure>
+                    <img src="resources/wisielec.png" alt="wisielec photo" class="saper">
+                </figure>
+            </aside>
+            <pre>
+        <code>
+public Board(int width, int height, Pane pane, MoverI mover) {
+    this.width = width;
+    this.height = height;
+    nodeArray = new Node[width][height];
+    mover.setNodes(nodeArray);
+    this.pane = pane;
+    for(int i = 0; i < width; i++) {
+        for (int j = 0; j < height; j++) {
+            Color color;
+            if ((i + j) % 2 == 0) color = Color.GREEN;
+            else color = Color.BEIGE;
+            nodeArray[i][j] = new Node(75.0d * j, 75.0d * i, 75.0d, 75.0d, color, i, j);
+            nodeArray[i][j].setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                Node node = (Node) event.getSource();
+                mover.giveNode(node.i, node.j);
+        }
+    });
+        </code>
+    </pre>
+        </section>
+
+
+    </main>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +162,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
         <main>
             <header>Moje projekty</header>
             <h1>
@@ -33,12 +186,8 @@
                 <li><a href="studies.html">-Studia</a></li>
               </ul> 
         </nav>
-        <section id="skils1">
-        </section>
-        <article id="skils2">
-        </article>
         <footer>
-            <h1>Wisielec</h1>
+            <h1>Wisielcc</h1>
             <img src="./resources/wisielec.png" class="wisielec" alt="Moje zdjęcie" align="right">
             <code>@SuppressLint("DiscouragedApi")<br>
                 var myNewButtonListener =  View.OnClickListener() { it -><br>
@@ -57,11 +206,11 @@
                 indexes.forEach { index -><br>
                 val sb = StringBuilder(finalUnderscoreWord).also { it.setCharAt(index, str[0]) }<br>
                 finalUnderscoreWord = sb.toString()<br>
-                }
-                }
+                }<br>
+                }<br>
             </code>
-        <h1>Saper</h1>
-        <img src="./resources/saper.png" class="wisielec" alt="Moje zdjęcie" align="right">
+            <div>
+                <h1>Saper</h1>
         <code>
             val row = 9<br>
             val col = 9<br>
@@ -77,154 +226,35 @@
             btnnew.layoutParams.height = (height - 600) / 9<br>
             btnnew.setOnClickListener(myNewButtonListener)<br>
         </code>
+        </div>
         <h1>Warcaby</h1>
-        <img src="./resources/warcaby.png" class="wisielec" alt="Moje zdjęcie" align="right">
+        <div>
+            <img src="./resources/warcaby.png" class="wisielec" alt="Moje zdjęcie" align="right">
+        </div>
+    <pre>
         <code>
-            public Board(int width, int height, Pane pane, MoverI mover) {<br>
-                this.width = width;<br>
-                this.height = height;<br>
-                nodeArray = new Node[width][height];<br>
-                mover.setNodes(nodeArray);<br>
-                this.pane = pane;<br>
-                for(int i = 0; i < width; i++) {<br>
-                    for (int j = 0; j < height; j++) {<br>
-                        Color color;<br>
-                        if ((i + j) % 2 == 0) color = Color.GREEN;<br>
-                        else color = Color.BEIGE;<br>
-                        nodeArray[i][j] = new Node(75.0d * j, 75.0d * i, 75.0d, 75.0d, color, i, j);<br>
-                        nodeArray[i][j].setOnMouseClicked(new EventHandler<MouseEvent>() {<br>
-                            @Override<br>
-                            public void handle(MouseEvent event) {<br>
-                                Node node = (Node) event.getSource();<br>
-                                mover.giveNode(node.i, node.j);<br>
-                            }<br>
-                        });<br>
-        </code>
+public Board(int width, int height, Pane pane, MoverI mover) {
+this.width = width;
+this.height = height;
+nodeArray = new Node[width][height];
+mover.setNodes(nodeArray);
+this.pane = pane;
+for(int i = 0; i < width; i++) {
+    for (int j = 0; j < height; j++) {
+        Color color;
+        if ((i + j) % 2 == 0) color = Color.GREEN;
+        else color = Color.BEIGE;
+        nodeArray[i][j] = new Node(75.0d * j, 75.0d * i, 75.0d, 75.0d, color, i, j);
+        nodeArray[i][j].setOnMouseClicked(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            Node node = (Node) event.getSource();
+            mover.giveNode(node.i, node.j);
+        }
+});
+    </code>
+    </pre>
         </footer>
       </div>
-</body>
-</html>
-<!-- <!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michał Baluta</title>
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <main>
-            <header>Moje projekty</header>
-            <h1>
-                1. Saper (Minesweeper), gdzie wypełniamy siatkę 9x9 polami które na początku są zakryte następnie odkrywamy je w taki sposób aby nie natrafić na minę. Na każdym odkrytym polu dodatkowo wypisywana jest liczba odkrytych min, które stykają się z danym polem. Możemy też zabezpieczyć dane pole flagą. Jeśli gracz odkryje wszystkie pola i zaznaczy flagami wszystkie miny, to wygrywa. Wykorzystaj odpowiedni Layout do rozłożenia przycisków i zrób tak aby przyciski wypełniały odpowiednio ekran oraz czcionka była odpowiednio duża (możesz to przetestować na emulatorze dla różnych rozdzielczości ekranów).
-            </h1>
-            <h1>
-                2. Napisz aplikację "Wisielec", która wyświetla po kolei obrazek wisielca oraz słowo które gracz próbuje zgadnąć. Słowo wybierane jest losowo z dostępnego słownika. Oczywiście cały czas wyświetlane jest słowo z prawidłowo zgadniętymi literami np. dla słowa komputer jeśli gracz zgadł prawidłowo litery o, m i e, słowo będzie wyglądało mniej więcej tak ?om???e?. Do utworzenia obrazków wykorzystaj np. program GIMP nazwij je odpowiednio wisielec0.png, wisielec1.png i tak dalej. Do wyświetlania obrazków wykorzystaj ImageView. Do przechowywania słownika wykorzystaj plik strings.xml.
-            </h1>
-            <h1>
-                3. Napisz warcaby w języku Java. Warcaby – gra planszowa powstała w XII wieku, najprawdopodobniej na południu Francji lub w Hiszpanii[1].
-
-                Gra posiada wiele odmian, spośród których uważane za dyscyplinę sportową są jedynie warcaby polskie (stupolowe) nazywane też międzynarodowymi. W większości krajów gra odbywa się jednak przeważnie na warcabnicy posiadającej 64 pola (często zastępowanej szachownicą), z wykorzystaniem 24 pionków (po 12 dla każdego z graczy). 
-            </h1>
-        </main>
-        <nav id="menu">
-            <h1>Menu</h1>
-                <ul class="nav-links">
-                <li><a href="index.html">-CV</a></li>
-                <li><a href="interests.html">-Zainteresowania</a></li>
-                <li><a href="contact.html">-Kontakt</a></li>
-                <li><a href="projects.html">-Projekty</a></li>
-                <li><a href="studies.html">-Studia</a></li>
-              </ul> 
-        </nav>
-        <section id="skils1">
-            <br>
-        </section>
-        <article id="skils2">
-            <br>
-        </article>
-        <footer>
-            <h1>Wisielec</h1>
-            <img src="./resources/wisielec.png" class="wisielec" alt="Moje zdjęcie" align="right">
-            <code>
-                @SuppressLint("DiscouragedApi")<br>
-                var myNewButtonListener =  View.OnClickListener() { it -><br>
-                val str = it.tag as String<br>
-                firstButton = it as Button<br>
-                firstButton.isEnabled = false<br>
-                var counter = 0<br>
-                val indexes = mutableListOf<Int>()<br>
-                wordToGuess.forEachIndexed { index, char -><br>
-                if (char.equals(str[0], true)) {<br>
-                indexes.add(index)<br>
-                counter++<br>
-                }<br>
-                }<br>
-                var finalUnderscoreWord = "" + underscoreWord // _ _ _ _ _ _ _ -> E _ _ _ _ _ _<br>
-                indexes.forEach { index -><br>
-                val sb = StringBuilder(finalUnderscoreWord).also { it.setCharAt(index, str[0]) }<br>
-                finalUnderscoreWord = sb.toString()<br>
-                }<br>
-                underscoreWord = finalUnderscoreWord<br>
-                if(counter == 0) {<br>
-                currentTries++<br>
-                }<br>
-                val image = findViewById<ImageView>(R.id.imageView)
-                image.setImageResource(resources.getIdentifier("game"+currentTries.toString(),"drawable",packageName))<br>
-                if(currentTries > 7) {<br>
-                underscoreWord = wordToGuess<br>
-                Toast.makeText(applicationContext, "Przegrales", Toast.LENGTH_LONG).show()<br>
-                image.setImageResource(resources.getIdentifier("czacha","drawable",packageName))<br>
-                }<br>
-                if(finalUnderscoreWord == wordToGuess.lowercase() && currentTries < 7) {<br>
-                Toast.makeText(applicationContext, "Wygrales", Toast.LENGTH_LONG).show()
-                image.setImageResource(resources.getIdentifier("untitled","drawable",packageName))
-                }
-                wordText()
-                }
-            </code>
-        <h1>Saper</h1>
-        <img src="./resources/saper.png" class="wisielec" alt="Moje zdjęcie" align="right">
-        <code>
-            val row = 9<br>
-            val col = 9<br>
-            for(i in 1..row){<br>
-            val llrow = LinearLayout(this)<br>
-            llvert.addView(llrow)<br>
-            for(j in 1..col){<br>
-            val btnnew = Button(this)<br>
-            btnnew.text = ""<br>
-            btnnew.tag = ""+i+"_"+j<br>
-            llrow.addView(btnnew)<br>
-            btnnew.layoutParams.width = width / 9<br>
-            btnnew.layoutParams.height = (height - 600) / 9<br>
-            btnnew.setOnClickListener(myNewButtonListener)<br>
-        </code>
-        <h1>Warcaby</h1>
-        <img src="./resources/warcaby.png" class="wisielec" alt="Moje zdjęcie" align="right">
-        <code>
-            public Board(int width, int height, Pane pane, MoverI mover) {<br>
-                this.width = width;<br>
-                this.height = height;<br>
-                nodeArray = new Node[width][height];<br>
-                mover.setNodes(nodeArray);<br>
-                this.pane = pane;<br>
-                for(int i = 0; i < width; i++) {<br>
-                    for (int j = 0; j < height; j++) {<br>
-                        Color color;<br>
-                        if ((i + j) % 2 == 0) color = Color.GREEN;<br>
-                        else color = Color.BEIGE;<br>
-                        nodeArray[i][j] = new Node(75.0d * j, 75.0d * i, 75.0d, 75.0d, color, i, j);<br>
-                        nodeArray[i][j].setOnMouseClicked(new EventHandler<MouseEvent>() {<br>
-                            @Override<br>
-                            public void handle(MouseEvent event) {<br>
-                                Node node = (Node) event.getSource();<br>
-                                mover.giveNode(node.i, node.j);<br>
-                            }<br>
-                        });<br>
-        </code>
-        </footer>
 </body>
 </html> -->

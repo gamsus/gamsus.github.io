@@ -1,0 +1,77 @@
+#skils1 {
+    grid-area: skils1;
+}
+
+#skils2 {
+    grid-area: skils2;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    @include grid-template(
+    $grid-template-columns,
+    "2fr 1.2fr 0.8fr",
+    $grid-template-areas);
+    font-weight: $font-weight;
+    background-color: $background-color;
+}
+
+.nav-links {
+    list-style: none;
+    //nesting
+    li {
+        padding: 12px;
+    }
+}
+
+.wisielec {
+    border-radius: 0%;
+    width: 60%;
+    max-width: 400px;
+    height: auto;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+    
+.saper {
+    border-radius: 0%;
+    max-width: 60%;
+}
+
+@media only screen and (max-width: $media-query) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas:
+            "main"
+            "menu"
+            "skils1"
+            "skils2"
+            "footer"
+    }
+
+    header {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    img {
+        max-width: 100%;
+        height:auto;
+    }
+
+    .saper {
+        max-width: 100%;
+        height:auto;
+        border-radius: 0%;
+    }
+}
